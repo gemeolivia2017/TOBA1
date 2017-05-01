@@ -19,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class NewCustomerServlet extends HttpServlet {
     
+    private User user;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
@@ -39,12 +41,14 @@ public class NewCustomerServlet extends HttpServlet {
                     || address.isEmpty() || city.isEmpty() || state.isEmpty()
                     || zipCode.isEmpty() || email.isEmpty()) {
                message = "Please fill out all textboxes.";
-               url = "/Success.html";
+               url = "/New_Customer.html";
                
             }
                     else {
+                        user = new User (firstName, lastName, phone, address, city,
+                        state, zipCode, email);
                             message = "";
-                            url = "/New_Customer.html";
+                            url = "/Success.html";
                             }
                     request.setAttribute(message, message);
               getServletContext().getRequestDispatcher(url).forward(request, response);

@@ -20,7 +20,11 @@ public class LoginServlet extends HttpServlet {
             String password = request.getParameter("password");
             
             if (username.equals ("jsmith@toba.com") && password.equals("letmein")) {
-                 url = "/Account_Activity.html";
+                url = "/Account_Activity.html";
+          
+            request.getRequestDispatcher(url).forward(request, response);
+
+
             }
             else {
                 url = "/Login_failure.html";
@@ -46,6 +50,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
         
         
     }

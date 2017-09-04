@@ -25,8 +25,8 @@ public class LoginServlet extends HttpServlet {
 
             
             if (username.equals ("jsmith@toba.com") && password.equals("letmein")) {
-                // url = "/Account_Activity.html";
-                             url = "/Error_java.jsp";
+                url = "/Account_Activity.html";
+                           //  url = "/Error_java.jsp";
 
                  request.getRequestDispatcher(url).forward(request, response);
 

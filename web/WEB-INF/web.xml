@@ -6,15 +6,15 @@
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>java.servlets.LoginServlet</servlet-class>
+        <servlet-class>servlets.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>NewCustomerServlet</servlet-name>
-        <servlet-class>java.servlets.NewCustomerServlet</servlet-class>
+        <servlet-class>servlets.NewCustomerServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TransactionServlet</servlet-name>
-        <servlet-class>java.servlets.TransactionServlet</servlet-class>
+        <servlet-class>servlets.TransactionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

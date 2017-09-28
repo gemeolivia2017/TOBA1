@@ -7,6 +7,9 @@
           int currentDay = currentDate.get(Calendar.DAY_OF_MONTH);
        %>
        
-       <p> %copy; Copyright <%= currentMonth + 1%>/<%= currentDay %>/<%= currentYear %> Margeme Diometre</p>
+       <p>Copyright <%= currentMonth + 1%>/<%= currentDay %>/<%= currentYear %> Margeme Diometre</p>
+       
+      </html>
+      </body>
        
   

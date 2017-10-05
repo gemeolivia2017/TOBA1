@@ -38,6 +38,21 @@
         <exception-type>java.lang.Throwable</exception-type>
         <location>/error.java.jsp</location>
     </error-page>
+    
+ 
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Admin Login</realm-name>
+    </login-config>
+ 
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/admin/login.html</form-login-page>
+            <form-error-page>/admin/login_error.html</form-error-page>
+        </form-login-config>
+    </login-config>
+ 
     <session-config>
         <session-timeout>
             30

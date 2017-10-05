@@ -12,6 +12,11 @@ and open the template in the editor.
     </head>
     <body>
         <div>Join Us Now and you will become a member in just minutes!!!!</div>
+            <script>
+            request.getAttribute(message);
+        </script>
+        
+        <p><i>${message}</i></p>
         
         <form action="NewCustomerServlet" method="post">
             <input type ="hidden" name="acion" value="add">
@@ -42,6 +47,6 @@ and open the template in the editor.
             
            <input type="submit" value="Submit" formaction="Success.html" />
         </form>
-   
+        <div id="nav"></div>
     </body>
 </html>

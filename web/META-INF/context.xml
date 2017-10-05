@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/TOBA1"/>
-<Context path="/TOBA">
-  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="50" maxIdle="30" maxWait="10000" name="jdbc/userdb" password="password" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/userdb?zeroDateTimeBehavior=convertToNull" username="root"/>
-</Context>
 
+<Context path="META-INF/TOBA1">
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="50" maxIdle="30" maxWait="10000" name="jdbc/userdb" password="password" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/userdb?zeroDateTimeBehavior=convertToNull" username="root"/>
+   <Resource
+        name="jdbc/auth"
+        description="Sample authentication"
+        type="javax.sql.DataSource"
+        auth="Container"
+        driverClassName="org.apache.derby.jdbc.ClientDriver"
+        maxActive="10" maxIdle="3"
+        maxWait="10000"
+        password="PASSWORD"
+        url="jdbc:derby://localhost:1527/authorize"
+        validationQuery="values(1)"
+        username="USER"/>
+   
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+           userTable="APP.USERS"
+           userNameCol="USERNAME"
+           userCredCol="PASSWORD"
+           userRoleTable="APP.AUTH"
+           roleNameCol="ROLENAME"
+           localDataSource="true"
+           dataSourceName="jdbc/auth"/>
+     
+</Context>
